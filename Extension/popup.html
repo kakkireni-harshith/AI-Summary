@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <title>AI Summarizer</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+        padding: 0;
+        width: 300px;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+
+    h2 {
+        text-align: center;
+        color: #1a73e8;
+        margin-bottom: 16px;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    select, button {
+        padding: 6px 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: white;
+        transition: all 0.2s ease;
+        flex: 1;
+    }
+
+    button:hover {
+        background-color: #1a73e8;
+        color: white;
+        cursor: pointer;
+        border-color: #1a73e8;
+    }
+
+    #result {
+        background-color: #fff;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        max-height: 200px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        font-size: 13px;
+    }
+
+    #result {
+    font-size: 14px;
+    white-space: normal;
+}
+
+#result strong {
+    font-weight: bold;
+}
+
+#result em {
+    font-style: italic;
+}
+
+#result ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+
+    #copy-btn {
+        flex-shrink: 0;
+        max-width: 70px;
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+      }
+
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+    }
+</style>
+
+</head>
+<body>
+    <h2>AI Summary</h2>
+    <div>
+        <select id="summary-type">
+            <option value="brief">Brief</option>
+            <option value="detailed">Detailed</option>
+            <option value="bullets">Bullet-points</option>
+        </select>
+        <button id="summarize">Summarize</button>
+        <button id="copy-btn">Copy</button>
+    </div>
+    
+
+    <pre id="result">Choose a type and click Summurize..</pre>
+    <script src="marked.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
